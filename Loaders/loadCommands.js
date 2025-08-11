@@ -13,8 +13,8 @@ module.exports = async client => {
         const filesDir = readdirSync(`./commands/${dir}/`).filter(file => file.endsWith('.js'));
         for (const file of filesDir) {  
             const command = require(`../commands/${dir}/${file}`);
-            client.commands.set(command.name, command);
-            console.log(`Commande ${command.name} chargée avec succès.`);
+            client.commands.set(command.data.name, command);
+            console.log(`Commande ${command.data.name} chargée avec succès.`);
             count++;
         };
     };

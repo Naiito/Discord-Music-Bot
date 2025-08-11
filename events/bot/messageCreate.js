@@ -1,5 +1,5 @@
 const {Events} = require('discord.js');
-const { run } = require('../bot/ready');
+const { run } = require('./ready');
 
 module.exports = {
     name: Events.MessageCreate,
