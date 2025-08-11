@@ -1,0 +1,24 @@
+Conditions d’Utilisation (Terms of Service)
+
+Dernière mise à jour : 11 août 2025
+
+Bienvenue !
+Ces Conditions d’Utilisation régissent l’utilisation du bot Discord privé "Musique du catalogue".
+1. Objet
+
+Le bot permet de lire de la musique à partir d’un catalogue musical prédéfini dans un serveur Discord privé.
+2. Accès et utilisation
+
+    L’accès est réservé aux personnes autorisées par le propriétaire du bot.
+
+    Il est interdit d’utiliser le bot à des fins illégales ou contraires aux règles de Discord.
+
+3. Responsabilités
+
+    L’utilisateur est responsable de son utilisation.
+
+    Le propriétaire n’est pas responsable des pertes, dommages ou perturbations liés à l’utilisation du bot.
+
+4. Modifications
+
+Les présentes conditions peuvent être modifiées à tout moment. Les utilisateurs seront informés en cas de changements majeurs.

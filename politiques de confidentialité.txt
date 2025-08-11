@@ -1,0 +1,30 @@
+Politique de Confidentialité (Privacy Policy)
+
+Dernière mise à jour : 11 août 2025
+
+La présente Politique explique comment le bot Discord "Musique du catalogue" gère les données des utilisateurs.
+1. Données collectées
+
+    Le bot ne collecte pas intentionnellement de données personnelles.
+
+    Des données techniques temporaires (identifiants Discord, commandes envoyées) peuvent être traitées uniquement pour le fonctionnement du bot.
+
+2. Utilisation des données
+
+    Les données techniques sont utilisées uniquement pour exécuter les commandes musicales.
+
+    Aucune donnée n’est utilisée à des fins commerciales.
+
+3. Partage des données
+
+    Aucune donnée n’est partagée avec des tiers.
+
+    Les données ne sont pas transférées hors de l’Union européenne.
+
+4. Conservation des données
+
+    Les données techniques temporaires sont supprimées automatiquement après traitement.
+
+5. Vos droits
+
+Conformément au RGPD, vous pouvez demander à accéder, rectifier ou supprimer vos données éventuelles en contactant le propriétaire du bot.
