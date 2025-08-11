@@ -1,51 +1,22 @@
-require('dotenv').config();
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const path = require('path');
-const fs = require('fs');
-
+const Discord = require('discord.js');
+const { Client, GatewayIntentBits, IntentsBitField } = require('discord.js');
+const intents = new IntentsBitField([3155968]); // Guilds, GuildMessages, GuildVoiceStates, DirectMessages
+const config = require('./config.js');
 const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-        GatewayIntentBits.GuildVoiceStates
-    ]
+    intents: intents, // Guilds, GuildMessages, GuildVoiceStates, DirectMessages
+    partials: ['CHANNEL', 'MESSAGE']   
+});
+const loadCommands = require('./Loaders/loadCommands.js');
+
+
+
+client.login(config.token);
+loadCommands(client);
+
+client.on('messageCreate', async message => {
+    if(message.content === '!ping') return btoa.loadCommands.get("ping").run(client, message);
 });
 
-client.commands = new Collection();
-const prefix = '-';
-
-// Chargement automatique des commandes
-const commandsPath = path.join(__dirname, 'commands');
-if (fs.existsSync(commandsPath)) {
-    const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-    for (const file of commandFiles) {
-        const command = require(path.join(commandsPath, file));
-        client.commands.set(command.name, command);
-    }
-}
-
-// Événement : prêt
-client.once('ready', () => {
-    console.log(`✅ Connecté en tant que ${client.user.tag}`);
+client.on('ready', () => {
+    console.log(`Connecté en tant que ${client.user.tag}`);
 });
-
-// Événement : message
-client.on('messageCreate', message => {
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const commandName = args.shift().toLowerCase();
-
-    const command = client.commands.get(commandName);
-    if (!command) return;
-
-    try {
-        command.execute(message, args);
-    } catch (error) {
-        console.error(error);
-        message.reply("❌ Erreur lors de l'exécution de la commande.");
-    }
-});
-
-client.login(process.env.DISCORD_TOKEN);
